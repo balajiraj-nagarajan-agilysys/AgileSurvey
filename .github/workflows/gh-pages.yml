@@ -1,0 +1,43 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        cache: 'npm'
+        cache-dependency-path: agile-survey/package-lock.json
+        
+    - name: Install dependencies
+      run: |
+        cd agile-survey
+        npm ci
+        
+    - name: Build Angular app
+      run: |
+        cd agile-survey
+        npm run build:gh-pages
+        
+    - name: Create .nojekyll file
+      run: touch agile-survey/dist/agile-survey/.nojekyll
+      
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      if: github.ref == 'refs/heads/master'
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./agile-survey/dist/agile-survey
+        cname: # Add custom domain if needed

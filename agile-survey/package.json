@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:gh-pages": "ng build --configuration production --base-href /AgileSurvey/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:agile-survey": "node dist/agile-survey/server/server.mjs"
