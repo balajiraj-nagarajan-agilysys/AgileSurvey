@@ -1,0 +1,101 @@
+# Agile Survey Angular App — POML prompt specification
+---
+mode: agent
+model: Claude Sonnet 4
+appName: agile-survey
+
+<task name="Project Setup">
+<prompt>
+Create a new Angular project named `agile-survey` with routing enabled and SCSS styles.
+Install Bootstrap for styling.
+Install Recharts (or ngx-charts) for chart visualization.
+No confirmation required, execute directly.
+</prompt>
+<acceptanceCriteria>
+✅ Angular CLI project generated
+✅ Bootstrap installed and imported in angular.json
+✅ Chart library installed
+</acceptanceCriteria>
+</task>
+
+<task name="Branding">
+<prompt>
+Add company branding.
+Company Name: Agile.
+Use `/src/assets/logo.png` (round logo with letter "A").
+Header should display logo + name with navigation.
+</prompt>
+<acceptanceCriteria>
+✅ Navbar with Agile logo and company name
+✅ Menu items: Participants, Dashboard
+</acceptanceCriteria>
+</task>
+
+<task name="Participants Page">
+<prompt>
+Implement Participants page matching screenshot layout.
+- Title: Participants, subtext below
+- Search bar with magnifier icon
+- Yellow "+ Add Participant" button aligned right
+- Table with columns: Name, Email, WhatsApp, LinkedIn, GitHub, Created, Actions
+- Actions: Edit, Delete
+- Add Participant form (modal or page) with fields:
+  Name, Email, WhatsApp, LinkedIn, GitHub, Created Date
+- Skills section:
+  Preload with 10 skills (Angular, React, Node.js, .NET Core, Java, Python, SQL, DevOps, Cloud, Machine Learning)
+  Each skill has Name + Weightage
+  Allow Add/Remove dynamically
+- Save (green) and Cancel (gray) buttons
+</prompt>
+<acceptanceCriteria>
+✅ Participants table styled like screenshot
+✅ Functional search, add, edit, delete
+✅ Preloaded 10 skills with weightage
+</acceptanceCriteria>
+</task>
+
+<task name="Dashboard Page">
+<prompt>
+Implement Dashboard like screenshot.
+- Title: Dashboard
+- Subtext: Participant statistics and skill analytics
+- Stats cards: Total Participants, Avg Python, Avg Angular, Avg JavaScript
+- Average Skills Overview: horizontal bar chart for skills
+- Skill Level Distribution: dropdown + distribution (low/medium/high)
+- Skill Summary: grid cards per skill with average + total
+</prompt>
+<acceptanceCriteria>
+✅ Dashboard layout matches screenshot
+✅ Chart displays skill averages
+✅ Skill distribution shown correctly
+✅ Summary cards functional
+</acceptanceCriteria>
+</task>
+
+<task name="Data Persistence">
+<prompt>
+Use localStorage as storage backend.
+- Load participants from localStorage at app start
+- Save participants on create/edit/delete
+- ParticipantService should handle CRUD using localStorage
+Data persists across page reloads.
+</prompt>
+<acceptanceCriteria>
+✅ All participant data stored in localStorage
+✅ Changes persist after refresh
+✅ Service abstraction implemented
+</acceptanceCriteria>
+</task>
+
+<task name="Quality and Responsiveness">
+<prompt>
+Ensure UI matches screenshots: clean, minimal, professional.
+Use Bootstrap cards, spacing, responsive layout.
+Generate test specs for all components and services.
+</prompt>
+<acceptanceCriteria>
+✅ Responsive layout
+✅ Tests generated
+✅ UI consistent with screenshots
+</acceptanceCriteria>
+</task>
