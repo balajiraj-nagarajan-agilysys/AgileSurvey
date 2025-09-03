@@ -32,7 +32,7 @@ export class ParticipantService {
           { name: 'Angular', weightage: 8 },
           { name: 'Node.js', weightage: 7 },
           { name: 'Python', weightage: 6 },
-          { name: 'JavaScript', weightage: 8 }
+          { name: 'Java', weightage: 8 }
         ]
       },
       {
@@ -44,7 +44,7 @@ export class ParticipantService {
         created: new Date('2025-02-10'),
         skills: [
           { name: 'React', weightage: 9 },
-          { name: 'JavaScript', weightage: 8 },
+          { name: 'Node.js', weightage: 8 },
           { name: 'Python', weightage: 8 },
           { name: 'Machine Learning', weightage: 7 }
         ]
@@ -61,7 +61,7 @@ export class ParticipantService {
           { name: '.NET Core', weightage: 7 },
           { name: 'SQL', weightage: 8 },
           { name: 'DevOps', weightage: 6 },
-          { name: 'Cloud (Azure/AWS)', weightage: 7 }
+          { name: 'Cloud', weightage: 7 }
         ]
       }
     ];
@@ -168,18 +168,23 @@ export class ParticipantService {
       { name: 'Python', weightage: 0 },
       { name: 'SQL', weightage: 0 },
       { name: 'DevOps', weightage: 0 },
-      { name: 'Cloud (Azure/AWS)', weightage: 0 },
-      { name: 'Machine Learning', weightage: 0 },
-      { name: 'JavaScript', weightage: 0 },
-      { name: 'Vue.js', weightage: 0 },
-      { name: 'MongoDB', weightage: 0 },
-      { name: 'Express.js', weightage: 0 },
-      { name: 'TypeScript', weightage: 0 },
-      { name: 'Spring Boot', weightage: 0 },
-      { name: 'AWS', weightage: 0 },
-      { name: 'Git', weightage: 0 },
-      { name: 'Agile', weightage: 0 },
-      { name: 'Scrum', weightage: 0 }
+      { name: 'Cloud', weightage: 0 },
+      { name: 'Machine Learning', weightage: 0 }
+    ];
+  }
+
+  getSkillOptions(): string[] {
+    return [
+      'Angular',
+      'React', 
+      'Node.js',
+      '.NET Core',
+      'Java',
+      'Python',
+      'SQL',
+      'DevOps',
+      'Cloud',
+      'Machine Learning'
     ];
   }
 

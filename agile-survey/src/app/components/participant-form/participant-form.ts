@@ -37,6 +37,10 @@ export class ParticipantFormComponent implements OnInit, OnChanges {
     this.formData.created = new Date(value);
   }
 
+  get skillOptions(): string[] {
+    return this.participantService.getSkillOptions();
+  }
+
   constructor(private participantService: ParticipantService) {}
 
   ngOnInit(): void {
@@ -51,7 +55,13 @@ export class ParticipantFormComponent implements OnInit, OnChanges {
         skills: [...this.participant.skills]
       };
     } else {
-      this.formData.skills = this.participantService.getDefaultSkills();
+      this.formData.skills = [
+        { name: '', weightage: 0 },
+        { name: '', weightage: 0 },
+        { name: '', weightage: 0 },
+        { name: '', weightage: 0 },
+        { name: '', weightage: 0 }
+      ];
     }
   }
 
@@ -79,7 +89,13 @@ export class ParticipantFormComponent implements OnInit, OnChanges {
         linkedin: '',
         github: '',
         created: new Date(),
-        skills: this.participantService.getDefaultSkills()
+        skills: [
+          { name: '', weightage: 0 },
+          { name: '', weightage: 0 },
+          { name: '', weightage: 0 },
+          { name: '', weightage: 0 },
+          { name: '', weightage: 0 }
+        ]
       };
     }
   }

@@ -86,17 +86,23 @@
               <div *ngFor="let skill of formData.skills; let i = index" 
                    class="row align-items-center mb-2">
                 <div class="col-md-6">
-                  <input type="text" class="form-control" 
+                  <select class="form-select" 
                          [(ngModel)]="skill.name" 
                          [name]="'skillName_' + i"
-                         placeholder="Skill name">
+                         required>
+                    <option value="">Select a skill</option>
+                    <option *ngFor="let skillOption of skillOptions" [value]="skillOption">
+                      {{ skillOption }}
+                    </option>
+                  </select>
                 </div>
                 <div class="col-md-4">
                   <input type="number" class="form-control" 
                          [(ngModel)]="skill.weightage" 
                          [name]="'skillWeightage_' + i"
                          min="0" max="10" 
-                         placeholder="Weightage (0-10)">
+                         placeholder="Weightage (0-10)"
+                         required>
                 </div>
                 <div class="col-md-2">
                   <button type="button" class="btn btn-sm btn-outline-danger" 

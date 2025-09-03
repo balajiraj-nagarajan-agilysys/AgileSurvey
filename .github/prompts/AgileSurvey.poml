@@ -42,8 +42,10 @@ Implement Participants page matching screenshot layout.
 - Add Participant form (modal or page) with fields:
   Name, Email, WhatsApp, LinkedIn, GitHub, Created Date
 - Skills section:
-  Preload with 10 skills (Angular, React, Node.js, .NET Core, Java, Python, SQL, DevOps, Cloud, Machine Learning)
-  Each skill has Name + Weightage
+  display the skills in drop down list ans the drop down should have the following 10 skills(Angular, React, Node.js, .NET Core, Java, Python, SQL, DevOps, Cloud, Machine Learning)
+<!--  Preload with 10 skills (Angular, React, Node.js, .NET Core, Java, Python, SQL, DevOps, Cloud, Machine Learning)
+  Each skill has Name + Weightage-->
+  Show 5 rows with skill names and weightage and user will be able to select skill name from drop down and enter weightage(0-10) in input box
   Allow Add/Remove dynamically
 - Save (green) and Cancel (gray) buttons
 </prompt>
